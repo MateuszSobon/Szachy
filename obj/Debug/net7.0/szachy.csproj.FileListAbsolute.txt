@@ -1,0 +1,15 @@
+D:\c#\szachy\bin\Debug\net7.0\szachy.exe
+D:\c#\szachy\bin\Debug\net7.0\szachy.deps.json
+D:\c#\szachy\bin\Debug\net7.0\szachy.runtimeconfig.json
+D:\c#\szachy\bin\Debug\net7.0\szachy.dll
+D:\c#\szachy\bin\Debug\net7.0\szachy.pdb
+D:\c#\szachy\obj\Debug\net7.0\szachy.csproj.AssemblyReference.cache
+D:\c#\szachy\obj\Debug\net7.0\szachy.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\szachy\obj\Debug\net7.0\szachy.AssemblyInfoInputs.cache
+D:\c#\szachy\obj\Debug\net7.0\szachy.AssemblyInfo.cs
+D:\c#\szachy\obj\Debug\net7.0\szachy.csproj.CoreCompileInputs.cache
+D:\c#\szachy\obj\Debug\net7.0\szachy.dll
+D:\c#\szachy\obj\Debug\net7.0\refint\szachy.dll
+D:\c#\szachy\obj\Debug\net7.0\szachy.pdb
+D:\c#\szachy\obj\Debug\net7.0\szachy.genruntimeconfig.cache
+D:\c#\szachy\obj\Debug\net7.0\ref\szachy.dll
