@@ -23,6 +23,11 @@ abstract class Figura
         nazwa ="";
         fnazwa = "";
     }
+
+    public abstract int[,] ruch(int x, int y, Figura[,] plansza)
+    {
+        
+    } 
 }
 class Pionek:Figura
 {

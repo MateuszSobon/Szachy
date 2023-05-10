@@ -29,7 +29,7 @@ internal class Program
             help();
         }
 
-        Szachownica szachownica = new Szachownica();
+        Szachownica szachownica = new Szachownica(); 
         szachownica.wypisz();
 
         Stopwatch stoper = new Stopwatch();
