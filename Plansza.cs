@@ -1,12 +1,14 @@
+using System.Diagnostics;
+
 class Szachownica
 {
-    Figura[,]  plansza = new Figura[8,8]; 
+   public Figura[,]  plansza = new Figura[8,8]; //public tylk odo testu!
 
-    int tura; //zlicza ile już tur zosrtało wykonanych
+    int tura; //zlicza ile już tur zosrtało wykonanych, 1-białe, 2-czarne, 3-białe ...
 
     public string kto_gra(int t)
     {
-        if (t%2==0)
+        if (t%2==1)
         {
             return "białe";
         }
@@ -16,10 +18,35 @@ class Szachownica
         }
             
     }
-    public void nowa_plansza()
+    public void nowa_plansza(int x, int y)
     {
         tura++;
+
+        List<List<int>> mat= plansza[x,y].ruch(x,y,plansza);
+
+        foreach(List<int> row in mat)
+        {
+            foreach(int val in row)
+            {
+                Console.Write(val + " ");
+            }
+            Console.WriteLine();
+        }
+        
+        Console.Clear();
+        wypisz();
+        
+        int l,p;
+        l = Console.CursorLeft;
+        p = Console.CursorTop;
+
+        Console.SetCursorPosition(x*4+5, y+6);
+        Console.BackgroundColor = ConsoleColor.Red;
+        Console.Write(" ");
+        Console.ResetColor();
+        Console.SetCursorPosition(l,p);
     }
+
     public void wypisz()
     {   
         Console.ResetColor();
@@ -69,7 +96,7 @@ class Szachownica
     }
     public Szachownica()
     {   
-        tura = 0;
+        tura = 1;
 
         for (int i=0; i<8; i++)
         {

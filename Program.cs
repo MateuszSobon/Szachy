@@ -20,6 +20,50 @@ internal class Program
         Console.SetCursorPosition(0,21);
         Console.CursorVisible = true;
     }
+
+    public static void wczytaj(Szachownica szachownica)
+    {
+        Stopwatch stoper = new Stopwatch();
+        stoper.Start();
+
+        string? napis;
+        int x,y;
+
+        while(stoper.Elapsed.TotalSeconds<100)
+        {   
+            edycja_widoku(stoper);
+
+            napis = Console.ReadLine();
+            if(napis!=null)
+            {
+                string[] cor = napis.Split(',');
+                if( cor.Length==2 && int.TryParse(cor[0], out x) && int.TryParse(cor[1],out y) )
+                {
+                    if(x<8 && x>=0 && y<8 && y>=0)
+                    {
+                        szachownica.nowa_plansza(x,y);
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine(napis);
+                        Console.WriteLine("To nie poprawny zakres wprowadzonych danych, wpisz 2 współrzędne od 0 do 7    ");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine(napis);
+                    Console.WriteLine("To nie poprawny format wprowadzonych danych, wpisz 2 współrzędne jeszcze raz      ");                    
+                }
+            }
+        }
+        if (stoper.Elapsed.TotalSeconds>100)
+        {
+            Console.WriteLine("Czas się skończył, tracisz ruch");  
+        }
+        
+    }
+    
     private static void Main(string[] args)
     {
         Console.WriteLine("Cześć, zagramy w szachy. Żeby poznać zasady wpisz \"help\" lub wciśnij enter żeby zagrać.");
@@ -32,39 +76,7 @@ internal class Program
         Szachownica szachownica = new Szachownica(); 
         szachownica.wypisz();
 
-        Stopwatch stoper = new Stopwatch();
-        stoper.Start();
-
-        string? napis2;
-        int x,y;
-
-        while(stoper.Elapsed.TotalSeconds<100)
-        {   
-            edycja_widoku(stoper);
-
-            napis2 = Console.ReadLine();
-            if(napis2!=null)
-            {
-                string[] cor = napis2.Split(',');
-                if( cor.Length==2 && int.TryParse(cor[0], out x) && int.TryParse(cor[1],out y) )
-                {
-                    if(x<8 && x>=0 && y<8 && y>=0)
-                    {
-                        break;   
-                    }
-                    else
-                    {
-                        Console.WriteLine(napis2);
-                        Console.WriteLine("To nie poprawny zakres wprowadzonych danych, wpisz 2 współrzędne od 0 do 7    ");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine(napis2);
-                    Console.WriteLine("To nie poprawny format wprowadzonych danych, wpisz 2 współrzędne jeszcze raz      ");                    
-                }
-            }
-        }
+        wczytaj(szachownica);
 
         Console.WriteLine("koniec gry");
         Console.Read();
