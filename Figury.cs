@@ -37,37 +37,37 @@ class Pionek:Figura
         kolor = k;
     }
     
-    public override List<List<int>> ruch(int x, int y, Figura[,] Plansza)
+    public override List<List<int>> ruch(int x, int y, Figura[,] plansza)
     {
         List<List<int>> matrix = new List<List<int>>();
 
-        if (Plansza[x,y].kolor==Kolor.biały) // ruch dla pionka białego
+        if (plansza[x,y].kolor==Kolor.biały) // ruch dla pionka białego
         {
-            if(Plansza[x+1,y].nazwa=="   ")  // czy jest możliwy ruch do przodu
+            if(plansza[x+1,y].nazwa=="   ")  // czy jest możliwy ruch do przodu
             {
                 matrix.Add(new List<int>() {x+1, y, 0});     
             }
-            if (x!=7 && y!= 7 && Plansza[x+1,y+1].kolor==Kolor.czarny && Plansza[x+1,y+1].nazwa!="   ")  // czy jest możliwy ruch ze zbiciem  w prawo
+            if (x!=7 && y!= 7 && plansza[x+1,y+1].kolor==Kolor.czarny && plansza[x+1,y+1].nazwa!="   ")  // czy jest możliwy ruch ze zbiciem  w prawo
             {
                 matrix.Add(new List<int>() {x+1, y+1, 1}); 
             }
-            if (x!=7 && y!= 0 && Plansza[x+1,y-1].kolor==Kolor.czarny && Plansza[x+1,y-1].nazwa!="   ")  // czy jest możliwy ruch ze zbiciem  w lewo
+            if (x!=7 && y!= 0 && plansza[x+1,y-1].kolor==Kolor.czarny && plansza[x+1,y-1].nazwa!="   ")  // czy jest możliwy ruch ze zbiciem  w lewo
             {
                 matrix.Add(new List<int>() {x+1, y-1, 1}); 
             }
             return matrix;
         }
-        else if (Plansza[x,y].kolor==Kolor.czarny) // ruch dla pionka czarnego
+        else if (plansza[x,y].kolor==Kolor.czarny) // ruch dla pionka czarnego
         {
-            if(Plansza[x-1,y].nazwa=="   ")  // czy jest możliwy ruch do przodu
+            if(plansza[x-1,y].nazwa=="   ")  // czy jest możliwy ruch do przodu
             {
                 matrix.Add(new List<int>() {x-1, y, 0});     
             }
-            if (x!=0 && y!=7 && Plansza[x-1,y+1].kolor==Kolor.biały && Plansza[x-1,y+1].nazwa!="   ")  // czy jest możliwy ruch ze zbiciem  w prawo
+            if (x!=0 && y!=7 && plansza[x-1,y+1].kolor==Kolor.biały && plansza[x-1,y+1].nazwa!="   ")  // czy jest możliwy ruch ze zbiciem  w prawo
             {
                 matrix.Add(new List<int>() {x-1, y+1, 1}); 
             }
-            if (x!=0 && y!= 0 && Plansza[x-1,y-1].kolor==Kolor.biały && Plansza[x-1,y-1].nazwa!="   ")  // czy jest możliwy ruch ze zbiciem  w lewo
+            if (x!=0 && y!= 0 && plansza[x-1,y-1].kolor==Kolor.biały && plansza[x-1,y-1].nazwa!="   ")  // czy jest możliwy ruch ze zbiciem  w lewo
             {
                 matrix.Add(new List<int>() {x-1, y-1, 1}); 
             }
@@ -91,10 +91,72 @@ class Wieza:Figura
         kolor = k;
     }
 
-    public override List<List<int>> ruch(int x, int y, Figura[,] Plansza)
+    public override List<List<int>> ruch(int x, int y, Figura[,] plansza)
     {
         List<List<int>> matrix = new List<List<int>>();
-        return matrix;
+        if(plansza[x,y].kolor==Kolor.biały)
+        {   
+            for(int i=x; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
+            {
+                if (plansza[i,y].nazwa=="   ")
+                {
+                    matrix.Add(new List<int>() {i,y,0});
+                }
+                else if(plansza[i,y].kolor==Kolor.czarny) 
+                {
+                    matrix.Add(new List<int>() {i,y,1});
+                    break;
+                }
+            }
+            for(int i=x; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
+            {
+                if (plansza[i,y].nazwa=="   ")
+                {
+                    matrix.Add(new List<int>() {i,y,0});
+                }
+                else if(plansza[i,y].kolor==Kolor.czarny) 
+                {
+                    matrix.Add(new List<int>() {i,y,1});
+                    break;
+                }
+            }
+            for(int i=y; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
+            {
+                if (plansza[x,i].nazwa=="   ")
+                {
+                    matrix.Add(new List<int>() {x,i,0});
+                }
+                else if(plansza[x,i].kolor==Kolor.czarny) 
+                {
+                    matrix.Add(new List<int>() {x,i,1});
+                    break;
+                }
+            }
+            for(int i=y; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
+            {
+                if (plansza[x,i].nazwa=="   ")
+                {
+                    matrix.Add(new List<int>() {x,i,0});
+                }
+                else if(plansza[x,i].kolor==Kolor.czarny) 
+                {
+                    matrix.Add(new List<int>() {x,i,1});
+                    break;
+                }
+            }
+            return matrix;
+        }
+        else if(plansza[x,y].kolor==Kolor.czarny)
+        {
+            return matrix;
+        }
+        else 
+        {
+            Console.WriteLine("Błąd podczas wyboru pionka który ma wykonać ruch");
+            matrix.Add(new List<int>() {x,y});
+            return matrix;
+        }
+        
     }
 }
 class Skoczek:Figura

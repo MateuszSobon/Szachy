@@ -137,7 +137,7 @@ class Szachownica
 
         for (int i=0; i<8; i++)
         {
-            plansza[1,i]=new Pionek(Kolor.biały);
+            plansza[1,i]=new Puste(); // na czas testów zmienione: plansza[1,i]=new Pionek(Kolor.biały);
             plansza[6,i]=new Pionek(Kolor.czarny);
 
             plansza[2,i]=new Puste();
