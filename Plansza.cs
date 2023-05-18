@@ -146,8 +146,12 @@ class Szachownica
             plansza[5,i]=new Puste();
         }
 
+<<<<<<< HEAD
         plansza[4,3]=new Wieza(Kolor.biały); // czas testów, było: [0,0]
         plansza[0,0]=new Puste(); // usunąć po testach
+=======
+        plansza[0,0]=new Wieza(Kolor.biały);
+>>>>>>> e07e316d073ba918f81d04cf711d2a978858e369
         plansza[0,1]=new Skoczek(Kolor.biały);
         plansza[0,2]=new Goniec(Kolor.biały);
         plansza[0,3]=new Krol(Kolor.biały);

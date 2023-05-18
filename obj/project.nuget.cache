@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "VgN0DF31ZShdgSZ6PZnn9rIPMTXEsE2p6avqxRq/Q2qxY+BfQ4TrS25p77ou1g3jRjgRf2VRmGeHslMQj/XrvQ==",
   "success": true,
   "projectFilePath": "D:\\C#\\Szachy-master\\szachy.csproj",
+=======
+  "dgSpecHash": "7wX/QbS9KJiGi+uEo9KO5LlbLBkDLmNjWbjAR+erqjEMaGY3ew0j5LKbhYpWag8SSjU8+tACDaqJzStkxnD82Q==",
+  "success": true,
+  "projectFilePath": "D:\\c#\\szachy\\szachy.csproj",
+>>>>>>> e07e316d073ba918f81d04cf711d2a978858e369
   "expectedPackageFiles": [],
   "logs": []
 }

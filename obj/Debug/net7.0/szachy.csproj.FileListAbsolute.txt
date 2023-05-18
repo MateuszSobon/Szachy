@@ -13,6 +13,7 @@ D:\c#\szachy\obj\Debug\net7.0\refint\szachy.dll
 D:\c#\szachy\obj\Debug\net7.0\szachy.pdb
 D:\c#\szachy\obj\Debug\net7.0\szachy.genruntimeconfig.cache
 D:\c#\szachy\obj\Debug\net7.0\ref\szachy.dll
+<<<<<<< HEAD
 D:\C#\Szachy-master\bin\Debug\net7.0\szachy.exe
 D:\C#\Szachy-master\bin\Debug\net7.0\szachy.deps.json
 D:\C#\Szachy-master\bin\Debug\net7.0\szachy.runtimeconfig.json
@@ -28,3 +29,5 @@ D:\C#\Szachy-master\obj\Debug\net7.0\refint\szachy.dll
 D:\C#\Szachy-master\obj\Debug\net7.0\szachy.pdb
 D:\C#\Szachy-master\obj\Debug\net7.0\szachy.genruntimeconfig.cache
 D:\C#\Szachy-master\obj\Debug\net7.0\ref\szachy.dll
+=======
+>>>>>>> e07e316d073ba918f81d04cf711d2a978858e369
