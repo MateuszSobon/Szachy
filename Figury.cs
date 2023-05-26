@@ -169,7 +169,6 @@ class Skoczek:Figura
         kolor = k;
     }
 
-<<<<<<< HEAD
     public override List<List<int>> ruch(int x, int y, Figura[,] plansza)
     {
         List<List<int>> matrix = new List<List<int>>();
@@ -357,12 +356,6 @@ class Skoczek:Figura
             matrix.Add(new List<int>() {x,y});
             return matrix;   
         }
-=======
-    public override List<List<int>> ruch(int x, int y, Figura[,] Plansza)
-    {
-        List<List<int>> matrix = new List<List<int>>();
-        return matrix;
->>>>>>> e07e316d073ba918f81d04cf711d2a978858e369
     }
 }
 class Goniec:Figura
