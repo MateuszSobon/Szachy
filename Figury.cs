@@ -96,7 +96,7 @@ class Wieza:Figura
         List<List<int>> matrix = new List<List<int>>();
         if(plansza[x,y].kolor==Kolor.biały)
         {   
-            for(int i=x; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
+            for(int i=x-1; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
             {
                 if (plansza[i,y].nazwa=="   ")
                 {
@@ -112,7 +112,7 @@ class Wieza:Figura
                     break;
                 }
             }
-            for(int i=x; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
+            for(int i=x+1; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
             {
                 if (plansza[i,y].nazwa=="   ")
                 {
@@ -128,7 +128,7 @@ class Wieza:Figura
                     break;
                 }
             }
-            for(int i=y; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
+            for(int i=y-1; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
             {
                 if (plansza[x,i].nazwa=="   ")
                 {
@@ -144,7 +144,7 @@ class Wieza:Figura
                     break;
                 }
             }
-            for(int i=y; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
+            for(int i=y+1; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
             {
                 if (plansza[x,i].nazwa=="   ")
                 {
@@ -164,7 +164,7 @@ class Wieza:Figura
         }
         else if(plansza[x,y].kolor==Kolor.czarny)
         {
-                for(int i=x; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
+                for(int i=x-1; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
             {
                 if (plansza[i,y].nazwa=="   ")
                 {
@@ -180,7 +180,7 @@ class Wieza:Figura
                     break;
                 }
             }
-            for(int i=x; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
+            for(int i=x+1; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
             {
                 if (plansza[i,y].nazwa=="   ")
                 {
@@ -196,7 +196,7 @@ class Wieza:Figura
                     break;
                 }
             }
-            for(int i=y; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
+            for(int i=y-1; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
             {
                 if (plansza[x,i].nazwa=="   ")
                 {
@@ -212,7 +212,7 @@ class Wieza:Figura
                     break;
                 }
             }
-            for(int i=y; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
+            for(int i=y+1; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
             {
                 if (plansza[x,i].nazwa=="   ")
                 {
@@ -737,7 +737,7 @@ class Hetman:Figura
                     }
                 }
             } 
-            for(int i=x; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
+            for(int i=x-1; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
             {
                 if (plansza[i,y].nazwa=="   ")
                 {
@@ -753,7 +753,7 @@ class Hetman:Figura
                     break;
                 }
             }
-            for(int i=x; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
+            for(int i=x+1; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
             {
                 if (plansza[i,y].nazwa=="   ")
                 {
@@ -769,7 +769,7 @@ class Hetman:Figura
                     break;
                 }
             }
-            for(int i=y; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
+            for(int i=y-1; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
             {
                 if (plansza[x,i].nazwa=="   ")
                 {
@@ -785,7 +785,7 @@ class Hetman:Figura
                     break;
                 }
             }
-            for(int i=y; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
+            for(int i=y+1; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
             {
                 if (plansza[x,i].nazwa=="   ")
                 {
@@ -885,7 +885,7 @@ class Hetman:Figura
                     }
                 }
             }
-            for(int i=x; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
+            for(int i=x-1; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
             {
                 if (plansza[i,y].nazwa=="   ")
                 {
@@ -901,7 +901,7 @@ class Hetman:Figura
                     break;
                 }
             }
-            for(int i=x; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
+            for(int i=x+1; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
             {
                 if (plansza[i,y].nazwa=="   ")
                 {
@@ -917,7 +917,7 @@ class Hetman:Figura
                     break;
                 }
             }
-            for(int i=y; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
+            for(int i=y-1; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
             {
                 if (plansza[x,i].nazwa=="   ")
                 {
@@ -933,7 +933,7 @@ class Hetman:Figura
                     break;
                 }
             }
-            for(int i=y; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
+            for(int i=y+1; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
             {
                 if (plansza[x,i].nazwa=="   ")
                 {
