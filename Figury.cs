@@ -148,6 +148,54 @@ class Wieza:Figura
         }
         else if(plansza[x,y].kolor==Kolor.czarny)
         {
+                for(int i=x; i>=0; i--) //ruch w dół w pion od położenia pionka w chwili obecnej
+            {
+                if (plansza[i,y].nazwa=="   ")
+                {
+                    matrix.Add(new List<int>() {i,y,0});
+                }
+                else if(plansza[i,y].kolor==Kolor.biały) 
+                {
+                    matrix.Add(new List<int>() {i,y,1});
+                    break;
+                }
+            }
+            for(int i=x; i<8; i++) //ruch w górę w pionie od położenia pionka w chwili obecnej
+            {
+                if (plansza[i,y].nazwa=="   ")
+                {
+                    matrix.Add(new List<int>() {i,y,0});
+                }
+                else if(plansza[i,y].kolor==Kolor.biały) 
+                {
+                    matrix.Add(new List<int>() {i,y,1});
+                    break;
+                }
+            }
+            for(int i=y; i>=0; i--) //ruch w lewo w poziomie od położenia pionka w chwili obecnej
+            {
+                if (plansza[x,i].nazwa=="   ")
+                {
+                    matrix.Add(new List<int>() {x,i,0});
+                }
+                else if(plansza[x,i].kolor==Kolor.biały) 
+                {
+                    matrix.Add(new List<int>() {x,i,1});
+                    break;
+                }
+            }
+            for(int i=y; i<8; i++) //ruch w prawo w poziomie od położenia pionka w chwili obecnej
+            {
+                if (plansza[x,i].nazwa=="   ")
+                {
+                    matrix.Add(new List<int>() {x,i,0});
+                }
+                else if(plansza[x,i].kolor==Kolor.biały) 
+                {
+                    matrix.Add(new List<int>() {x,i,1});
+                    break;
+                }
+            }
             return matrix;
         }
         else 
@@ -554,6 +602,13 @@ class Krol:Figura
     public override List<List<int>> ruch(int x, int y, Figura[,] Plansza)
     {
         List<List<int>> matrix = new List<List<int>>();
+        if(Plansza[x,y].kolor==Kolor.biały)
+        {
+            if(x>0)
+            {
+
+            }
+        }
         return matrix;
     }
 }
