@@ -165,7 +165,7 @@ class Szachownica
         plansza[7,6]=new Skoczek(Kolor.czarny);
         plansza[7,7]=new Wieza(Kolor.czarny);
 
-        plansza[2,2]=new Skoczek(Kolor.czarny); //na czas testów sztucznie wstawiam pionek         
+        plansza[5,7]=new Skoczek(Kolor.czarny); //na czas testów sztucznie wstawiam pionek         
     }
 }
 // na koniec statystyki ile czasu na turę, czas rozgrywki, ile pkt kto stracił.

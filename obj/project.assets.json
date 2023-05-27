@@ -8,26 +8,12 @@
     "net7.0": []
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\mateu\\.nuget\\packages\\": {}
-=======
     "C:\\Users\\mateu\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> e07e316d073ba918f81d04cf711d2a978858e369
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "D:\\C#\\Szachy-master\\szachy.csproj",
-      "projectName": "szachy",
-      "projectPath": "D:\\C#\\Szachy-master\\szachy.csproj",
-      "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-      "outputPath": "D:\\C#\\Szachy-master\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
       "projectUniqueName": "D:\\c#\\szachy\\szachy.csproj",
       "projectName": "szachy",
       "projectPath": "D:\\c#\\szachy\\szachy.csproj",
@@ -41,17 +27,13 @@
         "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
->>>>>>> e07e316d073ba918f81d04cf711d2a978858e369
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-<<<<<<< HEAD
-=======
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
->>>>>>> e07e316d073ba918f81d04cf711d2a978858e369
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -85,11 +67,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
-=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
->>>>>>> e07e316d073ba918f81d04cf711d2a978858e369
       }
     }
   }

@@ -8,8 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = szachy
-<<<<<<< HEAD
-build_property.ProjectDir = D:\C#\Szachy-master\
-=======
 build_property.ProjectDir = D:\c#\szachy\
->>>>>>> e07e316d073ba918f81d04cf711d2a978858e369

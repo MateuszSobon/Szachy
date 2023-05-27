@@ -368,10 +368,177 @@ class Goniec:Figura
         kolor = k;
     }
 
-    public override List<List<int>> ruch(int x, int y, Figura[,] Plansza)
+    public override List<List<int>> ruch(int x, int y, Figura[,] plansza)
     {
         List<List<int>> matrix = new List<List<int>>();
-        return matrix;
+        if(plansza[x,y].kolor==Kolor.biały)
+        {
+            if(x>0 && y>0) //wykluczam skrajne położenia 
+            {   
+                int i=x-1;
+                for(int j=y-1; j>=0 && i>=0; j--,i-- )
+                {
+                    if(plansza[i,j].nazwa=="   ") //jeżeli jest puste miejsce to dodaj ruch do listy
+                    {
+                        matrix.Add(new List<int> () {i,j,0});
+                    }
+                    else if (plansza[i,j].kolor==Kolor.czarny) //jeżeli jest przeciwnik na polu to dodaj to pole i wyjdz z pętli
+                    {
+                        matrix.Add(new List<int> () {i,j,1});
+                        break;
+                    }
+                    else if (plansza[i,j].kolor==plansza[x,y].kolor) // wyjdz z pętli jeżeli masz pionka ze swojego koloru
+                    {
+                        break;
+                    }
+                }
+            }
+            if(x>0 && y<7)
+            {   
+                int i=x-1;
+                for(int j=y+1; j<8 && i>=0; j++,i-- )
+                {
+                    if(plansza[i,j].nazwa=="   ") //jeżeli jest puste miejsce to dodaj ruch do listy
+                    {
+                        matrix.Add(new List<int> () {i,j,0});
+                    }
+                    else if (plansza[i,j].kolor==Kolor.czarny) //jeżeli jest przeciwnik na polu to dodaj to pole i wyjdz z pętli
+                    {
+                        matrix.Add(new List<int> () {i,j,1});
+                        break;
+                    }
+                    else if (plansza[i,j].kolor==plansza[x,y].kolor) // wyjdz z pętli jeżeli masz pionka ze swojego koloru
+                    {
+                        break;
+                    }
+                }
+            }
+            if(x<7 && y<7)
+            {
+                int i=x+1;
+                for(int j=y+1; j<8 && i<8 ; j++, i++)
+                {   
+                    if(plansza[i,j].nazwa=="   ") //jeżeli jest puste miejsce to dodaj ruch do listy
+                    {
+                        matrix.Add(new List<int> () {i,j,0});
+                    }
+                    else if (plansza[i,j].kolor==Kolor.czarny) //jeżeli jest przeciwnik na polu to dodaj to pole i wyjdz z pętli
+                    {
+                        matrix.Add(new List<int> () {i,j,1});
+                        break;
+                    }
+                    else if (plansza[i,j].kolor==plansza[x,y].kolor) // wyjdz z pętli jeżeli masz pionka ze swojego koloru
+                    {
+                        break;
+                    }
+                }
+            }
+            if(x<7 && y>0)
+            {
+                int i=x+1;
+                for(int j=y-1; j>=0 && i<8; j--,i++ )
+                {
+                    if(plansza[i,j].nazwa=="   ") //jeżeli jest puste miejsce to dodaj ruch do listy
+                    {
+                        matrix.Add(new List<int> () {i,j,0});
+                    }
+                    else if (plansza[i,j].kolor==Kolor.czarny) //jeżeli jest przeciwnik na polu to dodaj to pole i wyjdz z pętli
+                    {
+                        matrix.Add(new List<int> () {i,j,1});
+                        break;
+                    }
+                    else if (plansza[i,j].kolor==plansza[x,y].kolor) // wyjdz z pętli jeżeli masz pionka ze swojego koloru
+                    {
+                        break;
+                    }
+                }
+            } 
+        }
+        if(plansza[x,y].kolor==Kolor.czarny)
+        {
+            if(x>0 && y>0) //wykluczam skrajne położenia 
+            {   
+                int i=x-1;
+                for(int j=y-1; j>=0 && i>=0; j--,i-- )
+                {
+                    if(plansza[i,j].nazwa=="   ") //jeżeli jest puste miejsce to dodaj ruch do listy
+                    {
+                        matrix.Add(new List<int> () {i,j,0});
+                    }
+                    else if (plansza[i,j].kolor==Kolor.biały) //jeżeli jest przeciwnik na polu to dodaj to pole i wyjdz z pętli
+                    {
+                        matrix.Add(new List<int> () {i,j,1});
+                        break;
+                    }
+                    else if (plansza[i,j].kolor==plansza[x,y].kolor) // wyjdz z pętli jeżeli masz pionka ze swojego koloru
+                    {
+                        break;
+                    }
+                }
+            }
+            if(x>0 && y<7)
+            {   
+                int i=x-1;
+                for(int j=y+1; j<8 && i>=0; j++,i-- )
+                {
+                    if(plansza[i,j].nazwa=="   ") //jeżeli jest puste miejsce to dodaj ruch do listy
+                    {
+                        matrix.Add(new List<int> () {i,j,0});
+                    }
+                    else if (plansza[i,j].kolor==Kolor.biały) //jeżeli jest przeciwnik na polu to dodaj to pole i wyjdz z pętli
+                    {
+                        matrix.Add(new List<int> () {i,j,1});
+                        break;
+                    }
+                    else if (plansza[i,j].kolor==plansza[x,y].kolor) // wyjdz z pętli jeżeli masz pionka ze swojego koloru
+                    {
+                        break;
+                    }
+                }
+            }
+            if(x<7 && y<7)
+            {
+                int i=x+1;
+                for(int j=y+1; j<8 && i<8 ; j++, i++)
+                {   
+                    if(plansza[i,j].nazwa=="   ") //jeżeli jest puste miejsce to dodaj ruch do listy
+                    {
+                        matrix.Add(new List<int> () {i,j,0});
+                    }
+                    else if (plansza[i,j].kolor==Kolor.biały) //jeżeli jest przeciwnik na polu to dodaj to pole i wyjdz z pętli
+                    {
+                        matrix.Add(new List<int> () {i,j,1});
+                        break;
+                    }
+                    else if (plansza[i,j].kolor==plansza[x,y].kolor) // wyjdz z pętli jeżeli masz pionka ze swojego koloru
+                    {
+                        break;
+                    }
+                }
+            }
+            if(x<7 && y>0)
+            {
+                int i=x+1;
+                for(int j=y-1; j>=0 && i<8; j--,i++ )
+                {
+                    if(plansza[i,j].nazwa=="   ") //jeżeli jest puste miejsce to dodaj ruch do listy
+                    {
+                        matrix.Add(new List<int> () {i,j,0});
+                    }
+                    else if (plansza[i,j].kolor==Kolor.biały) //jeżeli jest przeciwnik na polu to dodaj to pole i wyjdz z pętli
+                    {
+                        matrix.Add(new List<int> () {i,j,1});
+                        break;
+                    }
+                    else if (plansza[i,j].kolor==plansza[x,y].kolor) // wyjdz z pętli jeżeli masz pionka ze swojego koloru
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+
+    return matrix;
     }
 }
 class Krol:Figura
