@@ -150,7 +150,8 @@ class Szachownica
         plansza[0,0]=new Puste(); // usunąć po testach
         plansza[0,1]=new Skoczek(Kolor.biały);
         plansza[0,2]=new Goniec(Kolor.biały);
-        plansza[0,3]=new Krol(Kolor.biały);
+        plansza[2,3]=new Krol(Kolor.biały); // plansza[0,3]=new Krol(Kolor.biały);
+        plansza[0,3]=new Puste(); // do usunięcia
         plansza[0,4]=new Hetman(Kolor.biały);
         plansza[0,5]=new Goniec(Kolor.biały);
         plansza[0,6]=new Skoczek(Kolor.biały);
@@ -165,7 +166,7 @@ class Szachownica
         plansza[7,6]=new Skoczek(Kolor.czarny);
         plansza[7,7]=new Wieza(Kolor.czarny);
 
-        plansza[5,7]=new Skoczek(Kolor.czarny); //na czas testów sztucznie wstawiam pionek         
+        plansza[1,3]=new Skoczek(Kolor.czarny); //na czas testów sztucznie wstawiam pionek         
     }
 }
 // na koniec statystyki ile czasu na turę, czas rozgrywki, ile pkt kto stracił.

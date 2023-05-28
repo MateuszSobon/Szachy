@@ -636,9 +636,74 @@ class Krol:Figura
         List<List<int>> matrix = new List<List<int>>();
         if(plansza[x,y].kolor==Kolor.biały)
         {
-            if(x>0)
+            if(x>0 && plansza[x-1,y].nazwa=="   ")  //szukam ruchu w pionie 
             {
+                matrix.Add(new List<int> () {x-1,y,0});
+            }
+            else if (x>0 && plansza[x-1,y].kolor==Kolor.czarny)
+            {
+                matrix.Add(new List<int> () {x-1,y,1});
+            }
+            if(x<7 && plansza[x+1,y].nazwa=="   ")
+            {
+                matrix.Add(new List<int> () {x+1,y,0});
+            }
+            else if(x<7 && plansza[x+1,y].kolor==Kolor.czarny)
+            {
+                matrix.Add(new List<int> () {x+1,y,1});
+            }
 
+            if(y>0 && plansza[x,y-1].nazwa=="   ") //szukam ruchu w poziomie  
+            {
+                matrix.Add(new List<int> () {x,y-1,0});
+            }
+            else if (y>0 && plansza[x,y-1].kolor==Kolor.czarny)
+            {
+                matrix.Add(new List<int> () {x,y-1,1});
+            }
+            if(y<7 && plansza[x,y+1].nazwa=="   ")
+            {
+                matrix.Add(new List<int> () {x,y+1,0});
+            }
+            else if(y<7 && plansza[x,y+1].kolor==Kolor.czarny)
+            {
+                matrix.Add(new List<int> () {x,y+1,1});
+            }
+
+            if(x>0 && y>0 && plansza[x-1,y-1].nazwa=="   ") //szukam ruchu po skosie lewo-gora
+            {
+                matrix.Add(new List<int> () {x-1,y-1,0});
+            }
+            else if (x>0 && y>0 && plansza[x-1,y-1].kolor==Kolor.czarny)
+            {
+                matrix.Add(new List<int> () {x-1,y-1,1});
+            }
+            
+            if(x>0 && y<7 && plansza[x-1,y+1].nazwa=="   ")  //szukam ruchu po skosie prawo-gora
+            {
+                matrix.Add(new List<int> () {x-1,y+1,0});
+            }
+            else if(x>0 && y<7 && plansza[x-1,y+1].kolor==Kolor.czarny)
+            {
+                matrix.Add(new List<int> () {x-1,y+1,1});
+            }
+
+            if(x<7 && y<7 && plansza[x+1,y+1].nazwa=="   ")  //szukam ruchu po skosie prawo-dół
+            {
+                matrix.Add(new List<int> () {x+1,y+1,0});
+            }
+            else if(x<7 && y<7 && plansza[x+1,y+1].kolor==Kolor.czarny)
+            {
+                matrix.Add(new List<int> () {x+1,y+1,1});
+            }
+            
+            if(x<7 && y>0 && plansza[x+1,y-1].nazwa=="   ")  //szukam ruchu po skosie lewo-dół
+            {
+                matrix.Add(new List<int> () {x+1,y-1,0});
+            }
+            else if(x<7 && y>0 && plansza[x+1,y-1].kolor==Kolor.czarny)
+            {
+                matrix.Add(new List<int> () {x+1,y-1,1});
             }
         }
         return matrix;
