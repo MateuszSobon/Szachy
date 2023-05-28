@@ -1,14 +1,18 @@
 ﻿using System.Diagnostics;
-using System.Threading;
+using System.Threading; 
+
+// LIST ++++++++++++++++++++++
+// resetujący się timer jak po wybraniu pionka do ruchu wprowadzi się błędne współrzędne
+// funkcjinalność wymuszająca ruch krola ktory może zostać zbity
 internal class Program
 {   
-    static public void help()
+    private static void help()
     {
         Console.WriteLine("Póki co tu nic nie ma, aby wyjść z help wciśnij dowolny klawisz");
         Console.ReadLine();
         Console.Clear();
     }
-    static public void edycja_widoku(Stopwatch stoper)
+    private static void edycja_widoku(Stopwatch stoper)
     {
         //Console.Clear();
         Console.SetCursorPosition(0,0);
@@ -17,7 +21,7 @@ internal class Program
         Console.ResetColor();
 
     }
-    public static void wczytaj(Szachownica szachownica)
+    private static void wczytaj(Szachownica szachownica)
     {
         Stopwatch stoper = new Stopwatch();
         stoper.Start();
@@ -104,17 +108,40 @@ internal class Program
     private static void Main(string[] args)
     {
         Console.WriteLine("Cześć, zagramy w szachy. Żeby poznać zasady wpisz \"help\" lub wciśnij enter żeby zagrać.");
+        Console.WriteLine("Tryb jednoosobowy wciśnij 1 i zatwierdź enterem");
+        Console.WriteLine("Tryb dwuosobowy wciśnij 2 i zatwierdź enterem");
         var napis = Console.ReadLine();
         if (napis=="help")
         {
             help();
         }
+        if(napis=="2")
+        {   
+            Szachownica szachownica = new Szachownica(); 
+            Console.Clear();
+            while(szachownica.szach_mat())
+            {
+                wczytaj(szachownica);
+            }
 
-        Szachownica szachownica = new Szachownica(); 
-        Console.Clear();
-        wczytaj(szachownica);
+            Console.WriteLine("koniec gry");
+            Console.Read();
+        }        
+        else if(napis=="1")
+        {
+            Console.WriteLine("Tryb gry jeszcze nie obsługiwany");
+            Console.ReadLine(); 
+        }
+        else
+        {
+            Console.WriteLine("źle wybrany tryb gry, uruchom gre jeszcze raz");
+            Console.ReadLine();  
+        }
 
-        Console.WriteLine("koniec gry");
-        Console.Read();
+        
+
+        
+
+
     }
 }

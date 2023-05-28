@@ -131,6 +131,47 @@ class Szachownica
         }
         Console.ResetColor();
     }
+
+    public bool szach_mat()  //jeżeli król jest w grze to graj dalej
+    {   
+        int ile=0;
+        for(int i=0; i<8; i++)  // szukam ile jest króli w grze
+        {
+            for(int j=0; j<8; j++)
+            {
+                if (plansza[i,j].fnazwa=="król")
+                {
+                    ile++;
+                }
+            }
+        } 
+
+        if (ile==2) // jeżeli są 2 to gramy dalej
+        {
+            return true;
+        }
+        else // jeśli jest 1 to znajdz który i wypisz wygranego
+        {
+            for(int i=0; i<8; i++)
+            {
+                for(int j=0; j<8; j++)
+                {
+                    if (plansza[i,j].fnazwa=="król" && plansza[i,j].kolor==Kolor.biały)
+                    {
+                        Console.WriteLine("Wygrał biały");
+                        return false;
+                    }
+                    else if (plansza[i,j].fnazwa=="król" && plansza[i,j].kolor==Kolor.czarny)
+                    {
+                        Console.WriteLine("Wygrał czarny");
+                        return false;  
+                    }
+                }
+            }
+        }
+        Console.WriteLine("Błąd w funkcji kończącej grę");
+        return false;
+    }
     public Szachownica()
     {   
         tura = 1;
@@ -160,8 +201,8 @@ class Szachownica
         plansza[7,0]=new Wieza(Kolor.czarny);
         plansza[7,1]=new Skoczek(Kolor.czarny);
         plansza[7,2]=new Goniec(Kolor.czarny);
-        plansza[7,3]=new Krol(Kolor.czarny);
-        plansza[7,4]=new Hetman(Kolor.czarny);
+        plansza[7,3]=new Hetman(Kolor.czarny);
+        plansza[7,4]=new Krol(Kolor.czarny);
         plansza[7,5]=new Goniec(Kolor.czarny);
         plansza[7,6]=new Skoczek(Kolor.czarny);
         plansza[7,7]=new Wieza(Kolor.czarny);
