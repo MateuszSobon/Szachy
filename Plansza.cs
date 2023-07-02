@@ -72,11 +72,11 @@ class Szachownica
                 tura++;
                 if(val[2]==1)
                 {
-                    if(plansza[x,y].kolor==Kolor.czarny)
+                    if(tura%2==1)
                     {
                         pkt_c++;
                     }
-                    else if (plansza[x,y].kolor==Kolor.biały)
+                    else if (tura%2==0)
                     {
                         pkt_b++;
                     }
@@ -88,7 +88,7 @@ class Szachownica
     {   
         Console.ResetColor();
         Console.ForegroundColor = ConsoleColor.DarkBlue;
-        Console.WriteLine($"Tura: {tura}  |  Grają {kto_gra(tura)}  |  Punkty białych: {pkt_b}  |  Punkty czarnych: {pkt_c}");
+        Console.WriteLine($"Tura: {tura}  |  Grają {kto_gra(tura)}  |  Punkty białych: {pkt_b}  |  Punkty czarnych: {pkt_c}   ");
         Console.BackgroundColor = ConsoleColor.DarkGray;
         Console.Write("  ");
 

@@ -2,8 +2,12 @@
 using System.Threading; 
 
 // LIST ++++++++++++++++++++++
-// resetujący się timer jak po wybraniu pionka do ruchu wprowadzi się błędne współrzędne
+// resetujący się timer jak po wybraniu pionka do ruchu wprowadzi się błędne współrzędne !!!OK
 // funkcjinalność wymuszająca ruch krola ktory może zostać zbity
+// tryb gry jednoosobowej
+// menu help
+//liczenie pkt liczą się tylko dla czarnych 
+//po skończonym czasie na ruch nie zmienia się tura
 internal class Program
 {   
     private static void help()
